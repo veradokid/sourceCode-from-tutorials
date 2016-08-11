@@ -2,6 +2,7 @@
 // source: https://www.youtube.com/watch?v=-u-j7uqU7sI&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_
 
 
+//tutorial 7
 console.log("\n//Node.js Tutorial for Beginners");
 console.log("//7 Prototyping");
 
@@ -14,6 +15,7 @@ function User() {
     }
 }
 
+//play game
 var Bucky = new User();
 var Wendy = new User();
 
@@ -21,10 +23,28 @@ Bucky.name = "Bucky";
 Wendy.name = "Wendy";
 
 Bucky.giveLife(Wendy);
+//Life status
 console.log("Bucky: " + Bucky.life);
 console.log("Wendy: " + Wendy.life);
 
+//add function using prototype
+User.prototype.uppercut = function uppercut(targetPlayer) {
+    targetPlayer.life -= 3;
+    console.log(this.name + " just uppercuttet " + targetPlayer.name);
+};
 
+
+Wendy.uppercut(Bucky);
+//Life status
+console.log("Bucky: " + Bucky.life);
+console.log("Wendy: " + Wendy.life);
+
+//add properties using prototype
+User.prototype.magic = 60;
+console.log(Bucky.magic);
+console.log(Wendy.magic);
+
+// tutorial 6
 console.log("\n//Node.js Tutorial for Beginners");
 console.log("//6 this");
 var Bucky = {
