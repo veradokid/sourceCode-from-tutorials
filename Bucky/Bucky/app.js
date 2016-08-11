@@ -1,6 +1,18 @@
 ﻿// youtube: thenewboston by Bucky Roberts
 // source: https://www.youtube.com/watch?v=-u-j7uqU7sI&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_
 
+//tutorial 8
+console.log("\n//Node.js Tutorial for Beginners");
+console.log("//8 Modules");
+//break code into different files
+//group similar code together in separate files
+
+
+var movies = require('./movies'); //never include the '.js' extension. explicitly use path
+//including extension will create problems in some contexts
+//omit the path when importing core modules
+movies.avatar();
+
 
 //tutorial 7
 console.log("\n//Node.js Tutorial for Beginners");
