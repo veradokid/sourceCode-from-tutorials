@@ -1,2 +1,1 @@
-﻿require('./emily');
-require('./bucky');
+﻿
