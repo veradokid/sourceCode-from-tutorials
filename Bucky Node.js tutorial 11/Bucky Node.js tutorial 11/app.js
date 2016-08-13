@@ -1,1 +1,2 @@
-﻿console.log('Hello world');
+﻿require('./emily');
+require('./bucky');
