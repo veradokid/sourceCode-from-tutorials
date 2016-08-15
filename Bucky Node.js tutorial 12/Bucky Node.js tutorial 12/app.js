@@ -26,7 +26,12 @@ console.log(path.extname(websiteAbout));
 
 
 //setInterval
+//repeats triggering at given interval
+
 setInterval(function () {
     console.log("beef");
 }, 2000);
 
+// name and path of file calling current code
+console.log(__dirname);
+console.log(__filename);
