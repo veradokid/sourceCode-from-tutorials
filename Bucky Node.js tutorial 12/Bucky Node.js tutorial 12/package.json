@@ -1,0 +1,9 @@
+{
+  "name": "bucky-node.js-tutorial-12",
+  "version": "0.0.0",
+  "description": "Bucky Node.js tutorial 12",
+  "main": "app.js",
+  "author": {
+    "name": "johan"
+  }
+}
