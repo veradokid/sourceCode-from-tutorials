@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');    //handling cookies
 var bodyParser = require('body-parser');        //parse jason fex
 
 var routes = require('./routes/index');
+var jade_tutorial_1 = require('./routes/jade_tutorial_1');
 
 var app = express();        //init app to use express
 
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //all relevant urls 
 app.use('/', routes);
+app.use('/jade_tutorial_1', jade_tutorial_1);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

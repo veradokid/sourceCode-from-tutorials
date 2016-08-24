@@ -33,11 +33,13 @@
     <Compile Include="app.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="bin\www" />
+    <Compile Include="routes\jade_tutorial_1.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="typings.json" />
     <Content Include="views\index.jade" />
+    <Content Include="views\jade_tutorial_1.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
   </ItemGroup>
