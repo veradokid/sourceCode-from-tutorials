@@ -3,3 +3,109 @@
 block content
   h1= title
   p Welcome to #{title}
+  
+  //added a variable
+  p My name is #{myName}
+
+  //for loop to populate list
+  //1. method. populate from array of objects
+  //obs: need to write 'li=' NOT with whitespace like this: 'li ='
+  ul
+    each val in [1,2,3]
+        li= val     
+
+  //2. method. while
+  - var n = 0
+  ul
+    while n < 2
+      li= n++
+      
+  //Iterate javascript "object"
+  - var values= [1,2,3]
+    ul
+      each val in values
+        li= val < 2 ? '-' : val
+
+  // for loop
+  - var array= ['ole', 'dole', 'doffen']
+  - for (var i = 0; i < array.length; ++i) {
+      li= array[i]
+  - }
+
+  h1= 'Examples from jade tutorial'
+  p. 
+    link: https://youtu.be/l5AXcXAP4r8
+    <br>
+    taken extensive notes as comments in code
+  
+  //tips:  
+  //jade use indentation to identify child elements (whitespace or tab will work)
+  //This also goes for comments
+  
+
+
+  p ex1:
+
+  div
+    //Write content directly after p for "inline" code format 
+    p First paragraph
+    p
+      //start text section using a "pipe"
+      |some text
+      br
+      |some more text. <b>This one is bold</b>
+
+
+    //p period
+    p.
+      Simple block of text.
+      <br> 
+      <i>This one is italic</i>
+
+    //paragraph with parameters
+    p(id="4th",
+    class="someClass").
+      Block of text blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
+    
+    //DIV will be generated eny time you do not spesify a specific tag
+    //MUST define a CLASS or ID
+    //#ID
+    //.Class
+
+    #IDforThisDIVtag.firstClass.secondClass 
+      Some text blablabla
+
+    //list of elements. 
+    //#id
+    //indent to describe li content
+    ul
+      li#bbp_list_item
+        a(href='#') Ole
+      li#bbp_list_item
+        a(href='#') Dole
+      li#bbp_list_item
+        a(href='#') Doffen
+
+    //write everything in one line if you want
+    //separate tags and content with :
+    ul
+        li#hero_list_item: a(href="#") Batman
+        li#hero_list_item: a(href="#") Superman
+        li#hero_list_item: a(href="#") Spiderman
+
+    //Comments
+    //Will see me in HTML source code
+    //-Will not see me in HTML
+
+    //interpolation
+    //To execute JS inside a jade template; prefix with "- " [dash + whitespace]
+    - myName = "Derek"
+
+    //Place a variable inline HTML
+    p Hello #{myName}
+
+    //Execute JS inline HTML
+    p 1234 * 5678 = #{1234*5678}
+
+
+
