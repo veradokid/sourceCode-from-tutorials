@@ -1,11 +1,11 @@
 {
-  "name": "bucky-node.js-tutorial-18",
+  "name": "node.js-tut-18",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
-  "description": "Bucky Node.js tutorial 18",
+  "description": "Node.js tut 18",
   "author": {
     "name": "johan"
   },
