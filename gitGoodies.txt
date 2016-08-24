@@ -1,0 +1,14 @@
+$git status 			# show status
+$git branch branchName		# create new branch called branchName
+$git checkout branchName	# set branch called branchName the active branch
+$git log -oneline		# list all commits in dense format
+
+*** How to typically create a GitHub repository
+1. Start locally
+   Start using GitHub webinterface instead
+   If -for some reason you start locally -create a GitHub repo manually - clone it to a new local repo -and then insert exisiting code into this new local repo.
+
+2. Clone existing GitHub repository
+   Create repo using GitHub webinterface
+   Clone and create local repo
+
