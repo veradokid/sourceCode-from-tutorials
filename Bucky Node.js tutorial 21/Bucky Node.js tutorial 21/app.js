@@ -12,8 +12,10 @@ var app = express();
 
 //add "local" variable
 //this will be available in the scope of this project or app.
-app.locals.points = "123";
-app.locals.videodata = require('./videodata.json');
+
+//dont place code her relevant for only one page
+//app.locals.points = "123";
+//app.locals.videodata = require('./videodata.json');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
