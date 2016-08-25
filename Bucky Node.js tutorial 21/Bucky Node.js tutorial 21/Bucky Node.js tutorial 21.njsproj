@@ -39,10 +39,10 @@
     <Content Include="README.md" />
     <Content Include="typings.json" />
     <Content Include="videodata.json" />
-    <Content Include="videodata.txt" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
+    <Content Include="views\templates\header.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
@@ -66,6 +66,7 @@
     <Folder Include="typings\globals\serve-static\" />
     <Folder Include="typings\globals\stylus\" />
     <Folder Include="views\" />
+    <Folder Include="views\templates\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="typings\globals\body-parser\index.d.ts" />
