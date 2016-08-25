@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="routes\about.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
@@ -38,6 +39,7 @@
     <Content Include="README.md" />
     <Content Include="typings.json" />
     <Content Include="videodata.json" />
+    <Content Include="views\about.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
