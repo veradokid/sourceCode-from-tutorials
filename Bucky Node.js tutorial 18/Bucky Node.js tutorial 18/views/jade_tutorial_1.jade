@@ -19,7 +19,7 @@ html
 
   p ex1:
 
-  div
+  div#paragraph
     //Write content directly after p for "inline" code format 
     p First paragraph
     p
@@ -48,6 +48,7 @@ html
     #IDforThisDIVtag.firstClass.secondClass 
       Some text blablabla
 
+ div#lists_ad_href
     //list of elements. 
     //#id
     //indent to describe li content
@@ -70,15 +71,171 @@ html
     //Will see me in HTML source code
     //-Will not see me in HTML
 
+div#interpolation
     //interpolation
     //To execute JS inside a jade template; prefix with "- " [dash + whitespace]
     - myName = "Derek"
 
     //Place a variable inline HTML
+    //use #{}
     p Hello #{myName}
 
     //Execute JS inline HTML
+    //use #{}
     p 1234 * 5678 = #{1234*5678}
 
+    - website = "http://website.com"
 
+    // how to use a href
+    // " or ' doesn't seem to matter
+    a(href="#{website}") website
+
+
+ div#lists_and_variables
+    - heroes = ["Wonder woman", 'Super girl', 'Bat girl']
+    ul
+        li#hero_list_item: a(href="#") Wonder woman
+        li#hero_list_item: a(href="#") Super girl
+        li#hero_list_item: a(href="#") Bat girl
+
+    ul
+        li#hero_list_item: a(href="#") #{heroes[0]}
+        li#hero_list_item: a(href="#") #{heroes[1]}
+        li#hero_list_item: a(href="#") #{heroes[2]}
+
+    //create an alias for tag name. fex shorten.
+    - bq = "blockquote"
+    #{bq} A bad idea
+
+    - batmanData = "Batman is a superhero... blablabla"
+
+    // creats a paragraph on the fly using a variable containing data using '='
+    // May use "=" when a block contains only a variable
+    p= batmanData
+
+    //You may do the sam; iow: access attribute values stored in an object:
+    //object:
+    - fnI = {"type": "text", "name": "fName"}
+    span First Name
+    // create an input, accessing the oject.data
+    input(type=fnI.type, name=fnI.name)
+
+    //tags will be encoded for security reasons
+    - someInfo = "<i>Very interesting</i>"
+    
+    //will not work. Must use brackets
+    p someInfo
+
+    //try to write out content of variable
+    p= someInfo
+
+    //due to encoding of variables, the html tags are noe interpreted by default.
+    //must add !   
+    p!= someInfo
+
+    //yet another approach
+    p {someInfo}
+    p #{someInfo}
+    p !{someInfo}
+
+div#logical_operators
+    //logical operators
+
+    //if else
+    - date = new Date()
+    - hour = date.getHours()
+
+    - if ((hour > 6) && (hour < 17)){
+      h3 day time
+    - } else {
+      h3 night time
+    - }
+
+    - age = 15
+
+    //if else if
+    if ((age >= 16) && (age < 18))
+        h3 You can drive!
+    else if age >= 18
+        h3 You can drive and vote
+    else
+        h3 You can wait til you turn 16
+
+    //unless
+    unless age >= 16
+        h3 You'll drive at 16
+    else
+        h3 You can drive
+    
+    //compact if
+    - dayTime = (((hour >= 6) && (hour <= 17)) ? "Day time" : "Night time")
+    h3 #{dayTime}
+
+    //case
+    - name = "Sue"
+
+    case name
+        when "Sally"
+            h3 Hi Sally
+        when "Sue"
+            h3 Hi Sue
+        default
+            h3 Hi you
+
+    //script.
+    //Use this keyword to execute ordinary javascript
+
+    script.
+        console.log("How you doin!")
+
+div#looping
+    //looping
+    p Hi there. Looping is comming up!
+
+    - qbs = ["ole", "dole", "doffen"]
+
+    ul
+        - for(i = 0; i < qbs.length; i++){
+            li= qbs[i]
+        - }
+    ul
+        each qb in qbs
+            li= qb
+
+    - i = 0
+    ul
+        while i <= 5
+            li= i
+            - i++;
+
+div#mixin
+    //are JS functions
+    //call the mixin by prefix by "+"
+    //mixin dont have to recieve arguments, may only provide an output
+    h2 mixin
+
+    //This mixin takes 3 arguments and willreturn an li:
+    mixin nflPlayer(name, pos, team)
+        li #{name} is the #{pos} for the #{team}
+
+    ul#nflPlayers
+        +nflPlayer("Tom Brady", "Quarterback", "Paitriots")
+        +nflPlayer("Payton Manning", "Quarterback", "Broncos")
+    
+    //This mixin will return a copyright symbol
+    mixin copyr
+        | &#169;
+
+    p
+        +copyr
+        |   2016
+
+    //mixin with undefined number of arguments
+    mixin makeList()
+        ul
+            - args = Array.prototype.slice.call(arguments);
+            for item in args
+                li= item
+
+    +makeList("dog", "cat", "fish")
 
