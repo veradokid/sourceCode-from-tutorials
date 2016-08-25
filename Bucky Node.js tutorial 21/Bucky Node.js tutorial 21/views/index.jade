@@ -1,4 +1,18 @@
 ﻿include ./templates/header.jade
 
-h1 Welcome to #{title}
+h1 Welcome to 
+p #{title}
 p Her is my points: #{points}
+
+//print out data
+h3 #{videodata.categoryName}
+
+//loop trough data, list out
+
+ul
+    - videodata.categories.forEach(function(item) {
+        li #{item.categoryName}
+    - })
+
+
+
