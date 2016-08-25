@@ -17,7 +17,34 @@ html
   
 
 
-  p ex1:
+  p :
+
+  div#jadajada
+      //for loop to populate list
+      //1. method. populate from array of objects
+      //obs: need to write 'li=' NOT with whitespace like this: 'li ='
+      ul
+        each val in [1,2,3]
+            li= val     
+
+      //2. method. while
+      - var n = 0
+      ul
+        while n < 2
+          li= n++
+      
+      //Iterate javascript "object"
+      - var values= [1,2,3]
+        ul
+          each val in values
+            li= val < 2 ? '-' : val
+
+      // for loop
+      - var array= ['ole', 'dole', 'doffen']
+      - for (var i = 0; i < array.length; ++i) {
+          li= array[i]
+      - }
+
 
   div#paragraph
     //Write content directly after p for "inline" code format 

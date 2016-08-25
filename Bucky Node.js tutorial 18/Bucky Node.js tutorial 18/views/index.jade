@@ -2,42 +2,21 @@
 
 //trying to realize Buckys ejs examples using jade...
 
+
 block content 
+  
+  //include another jade-file
+  include ./templates/header.jade
+
   h1= title
   p Welcome to #{title}
   
   //added a variable
   p My name is #{myName}
 
-  //for loop to populate list
-  //1. method. populate from array of objects
-  //obs: need to write 'li=' NOT with whitespace like this: 'li ='
-  ul
-    each val in [1,2,3]
-        li= val     
-
-  //2. method. while
-  - var n = 0
-  ul
-    while n < 2
-      li= n++
-      
-  //Iterate javascript "object"
-  - var values= [1,2,3]
-    ul
-      each val in values
-        li= val < 2 ? '-' : val
-
-  // for loop
-  - var array= ['ole', 'dole', 'doffen']
-  - for (var i = 0; i < array.length; ++i) {
-      li= array[i]
-  - }
-
   //external jade tutorial
+  //removed further jade tutorial examples to separate file.  
   p.
     Jade tutorial video: <a href="https://youtu.be/l5AXcXAP4r8">View here</a>
     <br>
     My own examples written while whatching the tutorial: <a href="jade_tutorial_1">link...</a>
-
-  //removed further jade tutorial examples to separate file.
